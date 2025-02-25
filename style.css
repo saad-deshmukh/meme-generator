@@ -78,15 +78,16 @@ label {
     margin-top: 20px;
     padding: 12px;
     font-size: 18px;
-    background: #c758df;
+    background: linear-gradient(45deg, #ff00ff, #ffcc00, #00ffcc, #ff0066);
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    
 }
 
 #downloadMeme:hover {
-    background: #e704e0;
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
 /* Canvas resize*/
