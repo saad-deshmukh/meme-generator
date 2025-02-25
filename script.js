@@ -6,9 +6,9 @@ const downloadMeme = document.querySelector("#downloadMeme");
 const errorMessage = document.querySelector("#errorMessage");
 
 let image = null;
-let previousImageData = ""; // Store last valid image state
+let previousImageData = ""; // Store last valid image state (this is here for preventing the download of unchanged images)
 
-// Restrict image size to 1MB
+// Allowing only image of 1 MB
 imageFileInput.addEventListener("change", (e) => {
     const file = e.target.files[0];
 
@@ -41,7 +41,7 @@ bottomTextInput.addEventListener("input", () => {
     if (image) updateMemeCanvas();
 });
 
-// Function to update meme canvas
+// Function to update meme canvas 
 function updateMemeCanvas() {
     if (!image) return; // Stop execution if no image is loaded
 
