@@ -15,7 +15,7 @@ imageFileInput.addEventListener("change", (e) => {
     if (!file) return; // Prevents error if no file is selected
 
     if (file.size >  5 * 1024 * 1024) { // 5MB limit
-        errorMessage.textContent = "❌ File size too large! Please select an image under 1MB.";
+        errorMessage.textContent = "❌ File size too large! Please select an image under 5MB.";
         errorMessage.style.display = "block";
         return;
     }
