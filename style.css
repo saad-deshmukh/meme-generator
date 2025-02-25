@@ -1,4 +1,4 @@
-/* Body with funky gradient */
+
 body {
     height: 100vh;
     display: flex;
@@ -14,7 +14,7 @@ body {
     padding: 10px;
 }
 
-/* Animated background */
+/* Background with Animation */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
@@ -65,7 +65,7 @@ label {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Error message styling */
+/* Error message styling  */
 .error-message {
     color: rgb(31, 6, 6);
     font-size: 25px;
@@ -89,7 +89,7 @@ label {
     background: #e704e0;
 }
 
-/* Make sure canvas resizes properly */
+/* Canvas resize*/
 canvas {
     max-width: 100%;
     height: auto;
