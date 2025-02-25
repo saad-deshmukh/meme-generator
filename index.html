@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Funky Meme Generator 🔥</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="meme-generator">
+        <h1>🔥 Funky Meme Generator 🔥</h1>
+
+        <label>Select an Image (Max: 1MB)</label>
+        <input type="file" id="imageFileInput" class="file-input" accept="image/*">
+        <p class="error-message" id="errorMessage"></p>
+
+        <label>Top Text</label>
+        <input type="text" id="topTextInput" placeholder="Enter top text..." class="text-input">
+      
+        <label>Bottom Text</label>
+        <input type="text" id="bottomTextInput" placeholder="Enter bottom text..." class="text-input">
+      
+        <canvas id="meme"></canvas>
+      
+        <button id="downloadMeme">📥 Download Meme</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
