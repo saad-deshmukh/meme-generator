@@ -8,7 +8,7 @@ const errorMessage = document.querySelector("#errorMessage");
 let image = null;
 let previousImageData = ""; // Store last valid image state (this is here for preventing the download of unchanged images)
 
-// Allowing only image of 1 MB
+//  image of 5 MB allowed
 imageFileInput.addEventListener("change", (e) => {
     const file = e.target.files[0];
 
@@ -41,9 +41,9 @@ bottomTextInput.addEventListener("input", () => {
     if (image) updateMemeCanvas();
 });
 
-// Function to update meme canvas 
+// Function for updating meme canvas 
 function updateMemeCanvas() {
-    if (!image) return; // Stop execution if no image is loaded
+    if (!image) return; // Stop if no image is loaded
 
     const ctx = canvas.getContext("2d");
     const width = image.width > 500 ? 500 : image.width;
