@@ -39,20 +39,21 @@ h1 {
 /* Labels */
 label {
     font-weight: bold;
-    display: block;
+    display: flex;
     margin-top: 10px;
+    align-items: center;
 }
 
 /* Inputs */
 .file-input, .text-input {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-top: 5px;
     border-radius: 10px;
     border: none;
     outline: none;
     font-size: 16px;
-    text-align: center;
+    text-align:center;
 }
 
 .file-input {
@@ -62,6 +63,7 @@ label {
 
 .text-input {
     background-color: rgba(255, 255, 255, 0.8);
+    
 }
 
 /* Error message styling  */
