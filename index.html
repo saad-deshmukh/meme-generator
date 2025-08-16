@@ -4,30 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Funky Meme Generator 🔥</title>
+    <title>🔥  Funky Meme Generator 🔥</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="meme-generator">
-        <h1>🔥 Funky Meme Generator 🔥</h1>
+        <h1>🔥  Funky Meme Generator 🔥</h1>
 
-        <label>Select an Image (Max: 5MB)</label>
-        <input type="file" id="imageFileInput" class="file-input" accept="image/*">
-        <p class="error-message" id="errorMessage"></p>
+        <div class="main-content">
+            <div class="canvas-container">
+                <canvas id="meme"></canvas>
+            </div>
 
-        <label>Top Text</label>
-        <input type="text" id="topTextInput" placeholder="Enter top text..." class="text-input">
-      
-        <label>Bottom Text</label>
-        <input type="text" id="bottomTextInput" placeholder="Enter bottom text..." class="text-input">
-      
-        <canvas id="meme"></canvas>
-      
-       
-        <button id="downloadMeme">&#x1F525;  Download</button>
+            <div class="controls-container">
+                <div class="image-controls">
+                    <label>1. Choose an Image</label>
+                    <input type="file" id="imageFileInput" class="file-input" accept="image/*">
+                    <button id="fetchMemeBtn" class="control-btn">🖼️ Random Meme</button>
+                    <p class="error-message" id="errorMessage"></p>
+                </div>
 
+                <div class="text-controls">
+                    <label>2. Add and Drag Your Text</label>
+                    <input type="text" id="memeTextInput" placeholder="Enter your text..." class="text-input">
+                </div>
+                <div class="customization-tools">
+                    <h3>🎨 Customization Tools 🎨</h3>
+                    <label for="fontColor">Font Color</label>
+                    <input type="color" id="fontColor" value="#FFFFFF">
+
+                    <label for="strokeColor">Stroke Color</label>
+                    <input type="color" id="strokeColor" value="#000000">
+
+                    <label for="fontSize">Font Size</label>
+                    <input type="range" id="fontSize" min="20" max="100" value="50">
+
+                    <label for="fontFamily">Font Family</label>
+                    <select id="fontFamily">
+                        <option value="Impact">Impact</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Arial">Arial</option>
+                    </select>
+
+                    <div class="customization-tools">
+                    <h3>🎨 Customization Tools 🎨</h3>
+                    <label for="fontColor">Font Color</label>
+                    <input type="color" id="fontColor" value="#FFFFFF">
+
+                    <label for="strokeColor">Stroke Color</label>
+                    <input type="color" id="strokeColor" value="#000000">
+
+                    <label for="fontSize">Font Size</label>
+                    <input type="range" id="fontSize" min="20" max="100" value="50">
+
+                    <label for="fontFamily">Font Family</label>
+                    <select id="fontFamily">
+                        <option value="Impact">Impact</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Arial">Arial</option>
+                    </select>
+
+                    <label for="filter">Image Filter</label>
+                    <select id="filter">
+                        <option value="none">None</option>
+                        <option value="grayscale(100%)">Grayscale</option>
+                        <option value="sepia(100%)">Sepia</option>
+                        <option value="invert(100%)">Invert</option>
+                        <option value="contrast(200%)">High Contrast</option>
+                        <option value="brightness(150%)">Bright</option>
+                        <option value="brightness(50%)">Dark</option>
+                        <option value="blur(4px)">Blurry</option>
+                        <option value="saturate(200%)">Vibrant</option>
+                        <option value="hue-rotate(90deg)">Color Shift</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="downloadMemeBtn" class="control-btn download">🚀 Download Meme</button>
+                    <button id="resetBtn" class="control-btn reset">✨ Reset</button>
+                </div>
+            </div>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,98 +1,203 @@
-
+/* General Body and Background Styling */
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-size: 22px;
     color: white;
-    background: linear-gradient(45deg, #ff0080, #ffcc00, #00ffcc, #ff3300, #6600ff);
-    background-size: 300% 300%;
-    animation: gradientAnimation 5s infinite alternate;
-    padding: 10px;
-}
-
-/* Background with Animation */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
-
-/* Meme Generator Container */
-.meme-generator {
-    width: 90%;
-    max-width: 500px;
+    box-sizing: border-box;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+
+    /* --- "COSMIC FUNK" BACKGROUND --- */
+    background-color: #1a0c2e; /* Dark purple base for contrast */
+    background-image:
+        /* Layer 1: A subtle dot pattern for texture */
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        /* Layer 2: A vibrant magenta "aura" */
+        radial-gradient(ellipse 50% 80% at 20% 20%, rgba(255, 0, 174, 0.3), transparent),
+        /* Layer 3: A cool cyan "aura" */
+        radial-gradient(ellipse 50% 80% at 80% 90%, rgba(0, 242, 254, 0.3), transparent);
+
+    background-size:
+        10px 10px, /* Dot pattern size */
+        150% 150%, /* Magenta aura size */
+        120% 120%; /* Cyan aura size */
+
+    background-position:
+        0 0,
+        -20% -20%,
+        20% 20%;
+
+    animation: cosmicGlow 20s ease-in-out infinite alternate;
 }
 
-/* Heading */
+/* Background Animation Keyframes */
+@keyframes cosmicGlow {
+    100% {
+        background-position:
+            0 0,
+            20% 20%,
+            -20% -20%;
+        background-size:
+            10px 10px,
+            120% 120%,
+            150% 150%;
+    }
+}
+
+/* Main Container */
+.meme-generator {
+    width: 95%;
+    max-width: 1000px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
 h1 {
-    font-size: 26px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    font-size: 2.5rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
 }
 
-/* Labels */
+/* Layout for Canvas and Controls */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.canvas-container {
+    flex: 1 1 400px; /* Flex properties for responsive sizing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    min-height: 300px;
+}
+
+.controls-container {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Styling for all controls */
 label {
     font-weight: bold;
-    display: flex;
-    margin-top: 10px;
-    align-items: center;
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Inputs */
-.file-input, .text-input {
-    width: 90%;
-    padding: 10px;
-    margin-top: 5px;
+.file-input, .text-input, select, input[type="color"], input[type="range"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
     border-radius: 10px;
     border: none;
     outline: none;
-    font-size: 16px;
-    text-align:center;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .file-input {
-    background-color: #fff;
     cursor: pointer;
 }
 
-.text-input {
-    background-color: rgba(255, 255, 255, 0.8);
-    
+.text-input::placeholder {
+    color: #777;
 }
 
-/* Error message styling  */
+input:focus, select:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Customization Tools Section */
+.customization-tools {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.customization-tools h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Buttons */
+.control-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.control-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+#fetchMemeBtn {
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.download {
+    background: linear-gradient(45deg, #ff00ff, #ffcc00);
+    color: white;
+}
+
+.reset {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+/* Error Message */
 .error-message {
-    color: rgb(31, 6, 6);
-    font-size: 25px;
+    color: #ffdddd;
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
     margin-top: 5px;
     display: none;
 }
 
-/* Download button */
-#downloadMeme {
-    margin-top: 20px;
-    padding: 12px;
-    font-size: 18px;
-    background: linear-gradient(45deg, #ff00ff, #ffcc00, #00ffcc, #ff0066);
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    
-}
-
-#downloadMeme:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-}
-
-/* Canvas resize*/
-canvas {
-    max-width: 100%;
-    height: auto;
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 2rem;
+    }
 }
